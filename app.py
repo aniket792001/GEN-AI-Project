@@ -49,3 +49,6 @@ if api_key:
             st.session_state.chat_history.append(AIMessage(content=response.content))
 else:
     st.info("Please enter your Google API Key in the sidebar to start.")
+
+
+## here is gen ai code for reference    
