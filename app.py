@@ -15,7 +15,7 @@ if api_key:
     # 2. Initialize the Model
     llm = ChatGoogleGenerativeAI(
         model="gemini-2.5-flash-lite", 
-        google_api_key= "AIzaSyCpceGVY5PTcT2d-bixK3F_lR8o85k3lS8",
+        google_api_key= "Api_key",
         convert_system_message_to_human=True
     )
 
