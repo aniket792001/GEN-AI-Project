@@ -1,19 +1,34 @@
-AI_Project/
+GEN-AI-Project/
 │
 ├── backend/
-│   ├── main.py                 # FastAPI entry point
-│   ├── rag/
-│   │   ├── qa_chain.py         # RAG pipeline logic
-│   │   ├── vector_store.py     # FAISS creation & loading
+│   ├── main.py                  # FastAPI entry point (/upload, /ask, /reset)
+│   └── rag/
+│       ├── loader.py            # Document loading (PDF/DOCX/TXT)
+│       ├── splitter.py          # Chunking logic
+│       ├── embeddings.py        # Embedding model config
+│       ├── vector_store.py      # FAISS creation, loading, reset
+│       └── qa_chain.py          # RAG retrieval + generation pipeline
 │
-|
-|---frontend
-├── faiss_index/                # Saved FAISS vector database
-├── data/                       # Uploaded / source documents
-├── venv/                       # Virtual environment
+├── frontend/
+│   └── app.py                   # Streamlit chat UI
+│
+├── tests/
+│   ├── test_vector_store.py     # Tests for chunking/indexing logic
+│   └── test_qa_chain.py         # Tests for the RAG ask() pipeline
+│
+├── documentation/
+│   ├── ARCHITECTURE.md          # System design & data flow
+│   ├── KNOWN_ISSUES.md          # Bug tracker (fixed + open)
+│   ├── ROADMAP.md               # Planned improvements
+│   └── SETUP.md                 # Local setup & troubleshooting
+│
+├── faiss_index/                 # Saved FAISS vector database (generated)
+├── uploads/                     # Uploaded source documents (generated)
+├── venv/                        # Virtual environment (not committed)
+├── .env                         # API keys / secrets (not committed)
+├── .gitignore
 ├── requirements.txt
 └── README.md
-
 
 
 ⚙️ Installation & Setup
